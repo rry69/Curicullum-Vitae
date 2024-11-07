@@ -1,0 +1,1301 @@
+:root {
+    --primary: #E8E9F3; /* Warna utama 1 */
+    --secondary: #416165; /* Warna utama 2 */
+    --text-color: #FFFFFF; /* Warna teks */
+    --b: #5aa8e8;
+    --b-rgba: rgba(108,90,232,0.25);
+    --b-skills: #5E95E8;
+    --w: #fff;
+    --tr01: all .5s ease-in-out;
+    --bezier: cubic-bezier(.17,.67,0,1);
+    --skills01: 90%;
+    --skills02: 85%;
+    --skills03: 90%;
+    --skills04: 65%;
+    --skills05: 75%;
+    --skills06: 90%;
+    --skills07: 60%;
+    --skills08: 60%;
+}
+
+@font-face {
+    font-family: 'Quentin';
+    src: url('fonts/Quentin.otf') format('opentype');
+    font-weight: normal; 
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Author';
+    src: url('fonts/Author.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Carving';
+    src: url('fonts/Carving.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Carving-Semi';
+    src: url('fonts/Carving-Semi.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Cream';
+    src: url('fonts/Cream.otf') format('opentype');
+}
+
+html, body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--primary);
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5; /* Setengah transparan */
+    }
+    100% {
+        opacity: 1; /* Kembali ke penuh */
+    }
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container1 {
+    max-width: 1400px;
+    margin: 0 auto; /* Pusatkan konten */
+    padding: 80px 20px 20px; /* Jarak atas yang lebih besar untuk mengimbangi navbar */
+}
+
+.section {
+    background-color: var(--primary);
+    color: var(--secondary);
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.section p {
+    opacity: 0;
+    animation: fade-in 0.5s ease 1s forwards; /* Mulai animasi setelah 2 detik */
+    text-align: justify;
+}
+
+h2 {
+    position: relative;
+    color: var(--secondary);
+    font-family: 'Author';
+    font-size: 5em;
+    font-style: italic;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    opacity: 0; /* Awalnya tersembunyi */
+    animation: fade-in-title 1s ease forwards; /* Fade-in untuk <h2> */
+}
+p {
+    font-family: 'Carving';
+    margin-top: 20px;
+}
+
+/* Atur tampilan link di seluruh halaman */
+.section a {
+    text-decoration: none; /* Hilangkan garis bawah */
+    color: var(--primary); /* Sesuaikan warna teks dengan variabel root */
+    background-color: var(--secondary); /* Warna background link */
+    padding: 2px 4px; /* Tambahkan padding untuk efek blok */
+    border-radius: 4px; /* Tambahkan sudut melengkung */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Efek transisi */
+}
+
+/* Hover effect pada link */
+.section a:hover {
+    background-color: var(--primary); /* Warna background saat hover */
+    color: var(--secondary); /* Ubah warna teks saat hover */
+}
+
+
+.line {
+    position: absolute;
+    left: 0;
+    bottom: 13px;
+    height: 5px;
+    background-color: var(--secondary);
+    width: 0;
+    animation: slide-line 1s ease 1s forwards; /* Animasi garis dimulai setelah 1 detik */
+    animation-timing-function: ease;
+}
+
+.star {
+    position: absolute;
+    font-size: 0.5em;
+    right: -30px;
+    bottom: -8px;
+    color: var(--secondary);
+    opacity: 0;
+    font-style: normal; /* Menghapus efek italic pada bintang */
+    transform-origin: center;
+    animation: spin-star 2s 2s infinite; /* Infinite spin dengan delay */
+    transition: opacity 0.3s;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+.show-next {
+    width: 50px; /* Atur lebar tombol sesuai kebutuhan */
+    height: 50px; /* Atur tinggi tombol sesuai kebutuhan */
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem; /* Sesuaikan ukuran ikon */
+    color: var(--secondary); /* Terapkan warna ikon */
+    transition: opacity 1s ease-in;
+    margin: 0 auto; /* Agar tombol berada di tengah secara horizontal */
+}
+
+/* Tambahkan hover efek jika diinginkan */
+.show-next:hover {
+    color: rgba(80, 227, 194, 0.8); /* Warna saat ikon di-hover */
+}
+
+/* Animasi fade untuk ikon agar muncul secara bertahap */
+.show-next.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.show-next.visible {
+    opacity: 1;
+}
+
+
+
+
+/* Animasi fade-in untuk <h2> */
+@keyframes fade-in-title {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Animasi garis bergerak */
+@keyframes slide-line {
+    0% { width: 0; }
+    100% { width: var(--line-length, 100%); } /* Custom width dengan default 100% */
+}
+
+/* Animasi bintang berputar */
+@keyframes spin-star {
+    0% { opacity: 1; transform: rotate(0deg); }
+    100% { opacity: 1; transform: rotate(360deg); }
+}
+
+/* Animasi fade-in untuk elemen <p> */
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Atur posisi bintang di ujung garis */
+#background .star {
+    right: 640px; /* Bintang untuk section ini */
+}
+
+#experience .star {
+    right: 520px; /* Bintang untuk section ini */
+}
+
+#motivation .star {
+    right: 890px; /* Bintang untuk section ini */
+}
+
+#study .star {
+    right: 800px; /* Bintang untuk section ini */
+}
+
+#skill .star {
+    right: 1025px; /* Bintang untuk section ini */
+}
+#contact .star {
+    right: 941px; /* Bintang untuk section ini */
+}
+
+/* Contoh Custom Width untuk Masing-masing Section */
+#background h2 {
+    --line-length: 50%; /* Garis setengah lebar teks */
+}
+
+#experience h2 {
+    --line-length: 59%; /* Garis 80% lebar teks */
+}
+
+#motivation h2 {
+    --line-length: 31%; /* Garis 60% lebar teks */
+}
+
+#study h2 {
+    --line-length: 38%; /* Garis 70% lebar teks */
+}
+
+#skill h2 {
+    --line-length: 21%; /* Garis 70% lebar teks */
+}
+#contact h2 {
+    --line-length: 27%; /* Garis 70% lebar teks */
+}
+
+.hidden {
+    display: none; /* Sembunyikan section */
+}
+
+
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: center; 
+    background-color: var(--primary) !important;
+    position: fixed; /* Tambahkan ini untuk menjaga navbar tetap di atas */
+    top: 0; /* Tetapkan posisi di bagian atas */
+    width: 100%; /* Pastikan navbar mengisi lebar layar */
+    z-index: 1000; /* Pastikan navbar berada di atas elemen lainnya */
+}
+
+.navbar a {
+    color: var(--secondary);
+    margin: 0 -80px;
+    font-family: 'Quentin';
+    font-size: 2.5rem;
+
+}
+
+.navbar a:hover {
+    color: #31511E;
+    
+}
+
+/* Divider */
+.divider {
+    position: absolute;
+    top: 450px;
+    left: 0;
+    width: 100%;
+    border: none;
+    border-top: 1px solid var(--secondary);
+    opacity: 0.5;
+}
+
+/* Menu Mengambang */
+.float-menu {
+    position: fixed;
+    top: 20px; /* Atur posisi vertikal */
+    right: 20px; /* Atur posisi horizontal */
+    z-index: 1000; /* Pastikan di atas elemen lain */
+    background-color: transparent;
+    color: var(--secondary);
+}
+
+.float-menu button {
+    background-color: transparent; /* Latar belakang transparan */
+    border: none; /* Hilangkan border */
+    color: var(--secondary); /* Warna ikon mengikuti warna sekunder */
+    font-size: 18px; /* Ukuran ikon */
+    cursor: pointer; /* Ubah kursor saat hover */
+    transition: color 0.3s; /* Transisi untuk warna */
+}
+
+
+.popup-menu {
+    display: none; /* Sembunyikan menu pop-up */
+    position: fixed; /* Mengubah menjadi fixed agar tidak terpengaruh oleh scroll */
+    top: 60px; /* Atur jarak dari bagian atas (tinggi navbar) */
+    right: 31px; /* Posisi dari sisi kanan */
+    background-color: var(--secondary);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2000; /* Pastikan di atas navbar */
+    width: 183;
+    height: auto; /* Mengatur tinggi otomatis agar sesuai dengan konten */
+    opacity: 0; /* Sembunyikan dengan opacity */
+    transform: translateX(100%); /* Mulai di luar layar di kanan */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Transisi untuk animasi */
+}
+
+.popup-menu.show {
+    display: block; /* Tampilkan pop-up */
+    opacity: 1; /* Tampilkan dengan opacity */
+    transform: translateX(0); /* Slide masuk ke posisi normal */
+}
+
+.popup-menu.hide {
+    display: none;
+    opacity: 0; /* Sembunyikan dengan opacity */
+    transform: translateX(100%); /* Slide keluar ke kanan */
+}
+
+.popup-menu ul {
+    list-style: none; /* Hilangkan bullet */
+    padding: 10px; /* Jarak dalam pop-up */
+    margin: 0; /* Hilangkan margin */
+}
+
+.popup-menu li {
+    margin: 5px 0; /* Jarak antar item */
+    font-family: 'Carving';
+    font-size: 13px;
+}
+
+.popup-menu a {
+    color: var(--primary); /* Warna teks */
+    text-decoration: none; /* Hilangkan garis bawah */
+    display: block; /* Buat link menjadi blok agar lebih mudah diklik */
+    padding: 8px 12px; /* Tambahkan padding untuk link */
+    transition: background-color 0.3s; /* Transisi untuk latar belakang */
+}
+
+.popup-menu a:hover {
+    animation: blink 0.6s infinite; /* Menggunakan animasi blink saat hover */
+    background-color: rgba(255, 255, 255, 0.2); /* Efek saat hover */
+}
+
+
+
+
+
+#dateTimeWidget {
+    position: fixed;
+    top: 21px; 
+    right: 65px; 
+    background-color: var(--secondary);
+    color: var(--primary);
+    padding: 8px 24px;
+    border-radius: 10px;
+    font-family: 'Carving-Semi', sans-serif;
+    font-size: 13px;
+    z-index: 1000; 
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Toggle Pallete */
+/* Pembungkus dengan posisi tetap */
+.toggle-wrapper {
+    position: fixed;
+    top: 19px; /* Sesuaikan nilai sesuai kebutuhan */
+    right: 366px; /* Sesuaikan nilai sesuai kebutuhan */
+    z-index: 3000;
+}
+
+/* Tombol dengan posisi relatif */
+.toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary);
+    border-radius: 50%;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s;
+    
+}
+
+.toggle i {
+    color: var(--primary); /* Warna ikon default */
+    transition: color 0.3s;
+}
+
+
+
+.palette-1 { --primary: #f7fc73; --secondary: #c93d23; --text-light: #fff; }
+.palette-2 { --primary: #f6f2f1; --secondary: #2c2a2a; --text-light: #fff; }
+.palette-3 { --primary: #0a3461; --secondary: #81e2bc; --text-light: #fff; }
+.palette-4 { --primary: #f1ece7; --secondary: #29201f; --text-light: #fff; }
+.palette-5 { --primary: #fff1de; --secondary: #2f84b6; --text-light: #ffffff; }
+.palette-6 { --primary: #120c0e; --secondary: #c8cb0e; --text-light: #ffffff; }
+.palette-7 { --primary: #dbdec6; --secondary: #292221; --text-light: #fff; }
+.palette-8 { --primary: #1a2e46; --secondary: #e2d2c9; --text-light: #fff; }
+.palette-9 { --primary: #faf9fb; --secondary: #4d1246; --text-light: #fff; }
+.palette-10 { --primary: #231413; --secondary: #d8d4d7; --text-light: #fff; }
+.palette-11 { --primary: #b1c47a; --secondary: #00000b; --text-light: #fff; }
+.palette-12 { --primary: #bb1417; --secondary: #faec00; --text-light: #fff; }
+.palette-13 { --primary: #00f4cc; --secondary: #164544; --text-light: #fff; }
+.palette-14 { --primary: #292d33; --secondary: #5bdada; --text-light: #fff; }
+
+.footer {
+    background-color: var(--secondary);
+    padding: 5px 0;
+    position: fixed;
+    bottom: 10px; /* Mengatur jarak dari bawah layar */
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    text-align: center;
+    border-radius: 10px;
+    color: var(--primary);
+    z-index: 9999;
+}
+
+.footer p {
+    margin: 0; 
+    font-size: 12px; 
+    color: var(--primary);
+    font-family: 'Poppins';
+    font-weight: 700;;
+}
+
+.social-icons {
+    margin-left: 6px;
+}
+
+.social-icons a {
+    margin: 0 5px;
+    font-size: 14px; 
+}
+
+.timeline {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    padding: 20px 0;
+    margin: 0 auto; /* Menempatkan timeline di tengah layar */
+    margin-top: 50px;
+    opacity: 0;
+    animation: fade-in 0.5s ease 1s forwards;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--secondary);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+    padding-right: 25px; /* Menambah jarak dari garis tengah */
+}
+
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+    padding-left: 25px; /* Menambah jarak dari garis tengah */
+}
+
+.timeline-card {
+    display: inline-block;
+    width: 100%; /* Mengatur lebar menjadi 100% dari elemen induk */
+    max-width: 400px; /* Membatasi lebar maksimum kartu */
+    padding-top: 0px; /* Padding atas */
+    padding-right: 56px; /* Padding kanan */
+    padding-bottom: 10px; /* Padding bawah */
+    padding-left: 56px; /* Padding kiri */
+    background: var(--primary);
+    border-radius: 19px;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'Author';
+    text-align: center; /* Menyelaraskan teks di tengah */
+}
+
+
+.timeline-item.left .timeline-card {
+    margin-right: 10px;
+}
+
+.timeline-item.right .timeline-card {
+    margin-left: 10px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: var(--secondary);
+    border-radius: 50%;
+}
+
+.timeline-item.left::before {
+    right: -10px;
+}
+
+.timeline-item.right::before {
+    left: -10px;
+}
+
+.modal {
+    display: none; /* Tersembunyi secara default */
+    position: fixed;
+    z-index: 9998;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Aktifkan scroll jika perlu */
+    background-color: rgb(0, 0, 0); /* Latar belakang hitam */
+    background-color: rgba(0, 0, 0, 0.4); /* Transparan */
+}
+
+.modal-content {
+    background-color: var(--primary);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* Lebar modal */
+    max-width: 1000px; /* Lebar maksimum modal */
+    border-radius: 8px;
+    display: flex; /* Menggunakan flexbox */
+    flex-direction: column; /* Mengatur arah flex menjadi kolom */
+    align-items: center; /* Memusatkan item dalam kolom */
+}
+
+.modal-title {
+    font-size: 70px; /* Ukuran font untuk judul modal */
+    color: var(--secondary); /* Warna teks untuk judul */
+    margin-bottom: -22px; /* Jarak bawah antara judul dan paragraf */
+    text-align: center;
+    margin-top: -28px;
+}
+
+.modal-description {
+    font-size: 1em; /* Ukuran font untuk deskripsi */
+    color: var(--secondary); /* Warna teks untuk deskripsi */
+    line-height: 1.5; /* Jarak antar baris deskripsi */
+    margin-left: 38px; /* Margin kiri */
+    margin-right: 36px;
+}
+
+.work-place {
+    text-align: center; /* Rata tengah */
+    margin-top: -5px; /* Atur margin atas sesuai kebutuhan */
+    color: var(--secondary); /* Warna teks */
+    font-family: 'Carving'; /* Font family */
+    font-size: 25px; /* Ukuran font */
+    font-weight: 600;
+    margin-bottom: -2px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.year {
+    font-size: 1.2em; /* Ukuran font untuk tahun */
+    font-weight: bold; /* Teks tebal untuk menarik perhatian */
+    color: var(--secondary); /* Warna teks sesuai dengan tema */
+    margin-bottom: 300; /* Jarak antara tahun dan tombol, set menjadi 0 */
+    display: block; /* Membuat span sebagai block agar tombol detail berada di bawahnya */
+}
+
+.detail-btn {
+    margin-top: 5px; /* Mengatur jarak atas untuk tombol */
+    padding: 4px 14px;
+    background-color: var(--secondary);
+    color: var(--primary);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 17px;
+    font-family: 'Carving-Semi';
+}
+
+.gallery-container {
+    position: relative;
+    max-width: 78%; /* Membuat galeri sesuai dengan lebar modal */
+    margin: 20px 0; /* Jarak antara deskripsi dan galeri */
+    overflow: hidden; /* Menyembunyikan gambar yang melampaui batas */
+}
+
+.gallery-slide {
+    display: none; /* Sembunyikan semua slide secara default */
+    animation: fade 0.5s; /* Animasi transisi */
+    text-align: center; /* Memusatkan gambar */
+}
+
+.gallery-slide.active {
+    display: block; /* Tampilkan slide aktif */
+}
+
+.gallery-slide img {
+    max-width: 1600px; /* Batas lebar maksimum untuk gambar */
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Menambahkan sudut melengkung */
+    display: block; /* Pastikan gambar ditampilkan sebagai blok */
+    margin: 0 auto; /* Memusatkan gambar di dalam slide */
+}
+
+.prev, .next {
+    background-color: rgba(255, 255, 255, 0.8); /* Latar belakang transparan */
+    border-radius: 5px;
+    color: var(--secondary); /* Mengatur warna ikon */
+    font-size: 1.4em; /* Ukuran ikon */
+    position: absolute; /* Memposisikan secara absolut */
+    cursor: pointer; /* Ubah cursor menjadi pointer saat hover */
+    border: none;
+}
+
+/* Posisi untuk tombol Previous */
+.prev {
+    left: 87px; /* Jarak dari kiri */
+    top: 614px; /* Posisi vertikal */
+    transform: translateY(-50%); /* Memusatkan vertikal */
+}
+
+/* Posisi untuk tombol Next */
+.next {
+    right: 90px; /* Jarak dari kanan */
+    top: 614px; /* Posisi vertikal */
+    transform: translateY(-50%); /* Memusatkan vertikal */
+}
+
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.concept-map {
+    position: relative;
+    width: 292px;
+    height: 361px;
+    top: -16px;
+    margin-bottom: 140px;
+    opacity: 0;
+    animation: fade-in 0.5s ease 1s forwards;
+  }
+  
+.pusat {
+    position: absolute;
+    top: 63%;
+    left: 227%;
+    transform: translate(-50%, -50%);
+    background-color: var(--secondary);
+    color: var(--primary);
+    padding: 15px 25px;
+    border-radius: 15%;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+    font-size: 21px;
+    font-family: 'Carving';
+
+  }
+  
+  .branch {
+    position: absolute;
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 15px 20px;
+    border-radius: 8px; /* Border radius untuk sudut lebih lembut */
+    border: 2px solid var(--secondary);
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 21px;
+    font-family: 'Carving';
+    
+  }
+  
+  /* Positioning branches around the center */
+  .branch-vocational {
+    top: 38%;
+    left: 319%;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+  }
+  
+  .branch-undergraduate {
+    top: 19%;
+    left: 146%;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+  }
+  
+  .branch-postgraduate {
+    top: 124%;
+    right: -111%;
+    transform: translate(50%, -50%);
+    z-index: 2000;
+  }
+  
+  /* Connector lines between center and branches */
+.connector {
+    position: absolute;
+    background-color: var(--secondary);
+    width: 4px;
+}
+  
+/* Connectors with diagonal rotations */
+.connector-vocational {
+    top: 26%;
+    left: 275%;
+    height: 54%;
+    transform: translateX(-50%) rotate(60deg);
+  }
+  
+.connector-undergraduate {
+    top: 43%;
+    left: 179%;
+    height: 50%;
+    transform: translateY(-50%) rotate(-40deg);
+  }
+  
+.connector-postgraduate {
+    top: 90%;
+    right: -121%;
+    height: 58%;
+    transform: translateY(-50%) rotate(20deg);
+  }
+
+
+
+.show {
+    cursor: pointer;
+    color: var(--primary);
+    background-color: var(--secondary); /* Background dengan warna utama */
+    padding: 5px 10px;
+    border-radius: 19px;
+    text-decoration: none;
+    margin-top: 0px;
+    display: inline-block; /* Agar padding dan background terlihat dengan baik */
+    transition: background-color 0.3s, color 0.3s; /* Efek transisi halus */
+    font-size: 14px;
+    font-family: 'Poppins';
+  }
+  
+.show:hover {
+    background-color: var(--secondary); /* Warna background berubah saat hover */
+    color: #fff; /* Warna teks tetap putih */
+  }
+
+.education-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+  }
+  
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd; /* Garis bawah untuk pembagian yang rapi */
+  }
+  
+.detail-label {
+    font-weight: bold;
+    color: var(--secondary);
+    width: 119%; /* Lebar label agar sejajar */
+    padding-right: 213px;
+    font-family: 'Carving';
+  }
+  
+.detail-value {
+    width: 139%; /* Lebar nilai agar sejajar dengan label */
+    text-align: right;
+    color: var(--secondary);
+    padding-left: 20px;
+    font-family: 'Poppins';
+  }
+
+.export-btn {
+    position: absolute; /* Untuk memungkinkan pengaturan top dan right */
+    top: 20px; /* Posisi dari atas, sesuaikan jika diperlukan */
+    right: 20px; /* Posisi dari kanan, sesuaikan jika diperlukan */
+    background-color: var(--secondary); /* Warna hijau untuk tombol */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Jarak antara ikon dan teks */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Efek transisi */
+  }
+  
+.export-btn:hover {
+    background-color: #31511E; /* Warna saat hover */
+  }
+  
+.export-btn i {
+    font-size: 18px; /* Ukuran ikon */
+  }
+  
+  .chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 315px; /* Tinggi chart */
+    border-left: 2px solid var(--secondary); /* Garis sumbu y */
+    padding: 5px 0; /* Mengurangi padding vertikal */
+    margin-bottom: 115px;
+    position: relative; /* Agar bisa menambahkan indikator */
+    top: 65px;
+    right: -174px;
+}
+
+.short-border {
+    position: absolute;
+    bottom: 0; /* Menempel pada bagian bawah chart */
+    left: 0px; /* Jarak dari kiri (sesuaikan sesuai kebutuhan) */
+    width: calc(100% - 320px); /* Lebar garis pendek (sesuaikan sesuai kebutuhan) */
+    height: 2px; /* Ketebalan garis */
+    background-color: #333; /* Warna garis */
+}
+
+.indicator {
+    position: absolute;
+    left: -20px; /* Posisi indikator di sebelah kiri sumbu y */
+    color: var(--secondary); /* Warna teks indikator */
+    font-size: 12px; /* Ukuran teks indikator */
+}
+
+.bar {
+    width: 4%;
+    background-color: var(--secondary);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin: 0 2px;
+}
+
+.bar:hover {
+    background-color: #31511E;
+}
+
+.bar div {
+    margin-top: 5px; /* Jarak antara bar dan teks/ikon */
+    text-align: center; /* Memastikan teks dan ikon berada di tengah */
+}
+.skill-name {
+    position: relative; /* Mengatur posisi relative untuk skill-name */
+    text-align: center; /* Memastikan teks dan ikon berada di tengah */
+}
+
+/* Atur posisi untuk setiap keahlian */
+.skill-name.office {
+    top: 32px; /* Sesuaikan posisi atas */
+    right: -42px; /* Sesuaikan posisi kanan */
+}
+
+.skill-name.photoshop {
+    top: 32px; /* Sesuaikan posisi atas */
+    right: 36px; /* Sesuaikan posisi kanan */
+}
+
+.skill-name.html-php {
+    top: 32px; /* Sesuaikan posisi atas */
+    right: 102px; /* Sesuaikan posisi kanan */
+}
+
+.skill-name.tailwind {
+    top: 32px; /* Sesuaikan posisi atas */
+    right: 152px; /* Sesuaikan posisi kanan */
+}
+
+.skill-name.javascript {
+    top: 32px; /* Sesuaikan posisi atas */
+    right: 225px; /* Sesuaikan posisi kanan */
+}
+
+.skill-name.teaching {
+    top: 32px; /* Sesuaikan posisi atas */
+    right: 285px; /* Sesuaikan posisi kanan */
+}
+
+.skill-name.codeigniter {
+    top: 32px; /* Sesuaikan posisi atas */
+    right: 351px; /* Sesuaikan posisi kanan */
+}
+.bar.photoshop {
+    top: 3px;
+    right: -72px;
+}
+.bar.office {
+    top: 3px;
+    right: -103px;
+}
+.bar.html-php {
+    top: 3px;
+    right: 46px;
+}
+.bar.tailwind {
+    top: 3px;
+    right: 66px;
+}
+
+.bar.javascript {
+    top: 3px;
+    right: 146px;
+}
+.bar.teaching {
+    top: 3px;
+    right: 210px;
+}
+.bar.codeigniter {
+    top: 3px;
+    right: 266px;
+}
+
+.icon-office {
+    width: 20px; /* Ukuran ikon Office */
+    height: auto; /* Menjaga rasio aspek gambar */
+    margin-top: 3px; /* Jarak di atas ikon */
+    position: relative; /* Mengatur posisi relatif untuk top dan right */
+    top: 183px; /* Atur nilai top sesuai kebutuhan */
+    right: -68px; /* Atur nilai right sesuai kebutuhan */
+    z-index: 2004;
+}
+
+.icon-photoshop {
+    width: 20px; /* Ukuran ikon Adobe Photoshop */
+    height: auto; /* Menjaga rasio aspek gambar */
+    margin-top: 3px; /* Jarak di atas ikon */
+    position: relative; /* Mengatur posisi relatif untuk top dan right */
+    top: 225px; /* Atur nilai top sesuai kebutuhan */
+    right: -105px; /* Atur nilai right sesuai kebutuhan */
+    z-index: 2004;
+}
+
+.icon-html-php {
+    width: 20px; /* Ukuran ikon HTML + PHP */
+    height: auto; /* Menjaga rasio aspek gambar */
+    margin-top: 3px; /* Jarak di atas ikon */
+    position: relative; /* Mengatur posisi relatif untuk top dan right */
+    top: 266px; /* Atur nilai top sesuai kebutuhan */
+    right: -57px; /* Atur nilai right sesuai kebutuhan */
+    z-index: 2004;
+}
+
+.icon-tailwind {
+    width: 20px; /* Ukuran ikon TailwindCSS */
+    height: auto; /* Menjaga rasio aspek gambar */
+    margin-top: 3px; /* Jarak di atas ikon */
+    position: relative; /* Mengatur posisi relatif untuk top dan right */
+    top: 311px; /* Atur nilai top sesuai kebutuhan */
+    right: -123px; /* Atur nilai right sesuai kebutuhan */
+    z-index: 2004;
+}
+
+.icon-javascript {
+    width: 20px; /* Ukuran ikon Javascript */
+    height: auto; /* Menjaga rasio aspek gambar */
+    margin-top: 3px; /* Jarak di atas ikon */
+    position: relative; /* Mengatur posisi relatif untuk top dan right */
+    top: 355px; /* Atur nilai top sesuai kebutuhan */
+    right: -111px; /* Atur nilai right sesuai kebutuhan */
+    z-index: 2004;
+}
+
+.icon-teaching {
+    width: 20px; /* Ukuran ikon Teaching */
+    height: auto; /* Menjaga rasio aspek gambar */
+    margin-top: 3px; /* Jarak di atas ikon */
+    position: relative; /* Mengatur posisi relatif untuk top dan right */
+    top: 394px; /* Atur nilai top sesuai kebutuhan */
+    right: -95px; /* Atur nilai right sesuai kebutuhan */
+    z-index: 2004;
+}
+
+.icon-codeigniter {
+    width: 20px; /* Ukuran ikon Code Igniter */
+    height: auto; /* Menjaga rasio aspek gambar */
+    margin-top: 3px; /* Jarak di atas ikon */
+    position: relative; /* Mengatur posisi relatif untuk top dan right */
+    top: 435px; /* Atur nilai top sesuai kebutuhan */
+    right: -122px; /* Atur nilai right sesuai kebutuhan */
+    z-index: 2004;
+}
+
+.skills {
+    animation: fade-in 0.5s ease 1s forwards;
+    top: 252px;
+    right: -1071px;
+    margin-bottom: 100px;
+}
+section article.skills {
+    width: 500px;
+    height: auto;
+    z-index: 2005;
+    position: relative;
+}
+
+
+/* Default positioning - center */
+section.toad-fullscreen {
+    transform: translate(-50%, -50%)
+}
+
+
+@keyframes skills {
+    0% {
+        transform: translateX(-500px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+section article.skills p {
+    z-index: 2;
+    color: var(--primary);
+    padding: 10px;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+section article.skills div span:nth-child(1) {
+    z-index: -2;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+    background: var(--primary);
+    height: 100%;
+    width: 100%;
+}
+
+section article.skills div span:nth-child(2) {
+    z-index: -1;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background: var(--secondary);
+    height: 100%;
+}
+
+/* Skill bars width and animation delay */
+section article.skills div:nth-child(1) span:nth-child(2) {
+    width: var(--skills01);
+    animation-delay: 0s;
+}
+
+section article.skills div:nth-child(2) span:nth-child(2) {
+    width: var(--skills02);
+    animation-delay: 0.05s;
+}
+
+section article.skills div:nth-child(3) span:nth-child(2) {
+    width: var(--skills03);
+    animation-delay: 0.1s;
+}
+section article.skills div:nth-child(4) span:nth-child(2) {
+    width: var(--skills04);
+    animation-delay: 0.15s;
+}
+section article.skills div:nth-child(5) span:nth-child(2) {
+    width: var(--skills05);
+    animation-delay: 0.2s;
+}
+section article.skills div:nth-child(6) span:nth-child(2) {
+    width: var(--skills06);
+    animation-delay: 0.25s;
+}
+section article.skills div:nth-child(7) span:nth-child(2) {
+    width: var(--skills07);
+    animation-delay: 0.3s;
+}
+section article.skills div:nth-child(8) span:nth-child(2) {
+    width: var(--skills08);
+    animation-delay: 0.35s;
+}
+
+/* Repeat for other divs with different skill values and delays */
+
+
+
+@keyframes skills {
+    0% {
+        left: -500px;
+        opacity: 0;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.anu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: fit-content;
+    margin-top: 21px;
+    margin-bottom: -11px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: fade-in 0.5s ease 1s forwards;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    perspective: 1000px;
+}
+
+/* Gaya untuk Instagram */
+.box.instagram {
+    background-color: #D91656; /* Latar belakang depan */
+}
+.box.instagram .box-back {
+    background-color: #D91656; /* Latar belakang belakang */
+    color: white; /* Warna teks */
+}
+
+/* Gaya untuk Facebook */
+.box.facebook {
+    background-color: #006BFF; /* Latar belakang depan */
+}
+.box.facebook .box-back {
+    background-color: #006BFF; /* Latar belakang belakang */
+    color: white; /* Warna teks */
+}
+
+/* Gaya untuk LinkedIn */
+.box.linkedin {
+    background-color: #1230AE; /* Latar belakang depan */
+}
+.box.linkedin .box-back {
+    background-color: #1230AE; /* Latar belakang belakang */
+    color: white; /* Warna teks */
+}
+
+/* Gaya untuk WhatsApp */
+.box.whatsapp {
+    background-color: #86D293; /* Latar belakang depan */
+}
+.box.whatsapp .box-back {
+    background-color:#86D293; /* Latar belakang belakang */
+    color: white; /* Warna teks */
+}
+
+/* Gaya untuk Email */
+.box.email {
+    background-color:#FEFFA7; /* Latar belakang depan */
+}
+.box.email .box-back {
+    background-color: #FEFFA7; /* Latar belakang belakang */
+    color: white; /* Warna teks */
+}
+
+.box-inner {
+    width: 50%;
+    height: 50%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.box:hover .box-inner {
+    transform: rotateY(180deg);
+}
+
+.box-front, .box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-back {
+    transform: rotateY(180deg);
+}
+
+.box img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Gaya link pada bagian belakang */
+.box-back a {
+    color: white; /* Ubah warna teks link agar kontras dengan latar belakang */
+    text-decoration: none; /* Menghapus garis bawah pada link */
+    font-weight: bold; /* Menebalkan teks */
+    transition: color 0.3s; /* Transisi halus saat hover */
+    font-size: 10px;
+    font-family: 'Poppins';
+}
+
+.box-back a:hover {
+    color: var(--secondary); /* Ubah warna teks saat hover */
+}

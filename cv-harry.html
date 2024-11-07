@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+tn<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .fade-in {
+            animation: fade-in 0.5s forwards;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <title>VITAERRY</title>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Harry Prasetyo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    
+                </div>
+            </div>
+        </nav>
+        <div class="container1">
+            <section id="background" class="section p-4 rounded">
+                <h2>LATAR BELAKANG <span class="line"></span><span class="star">★</span></h2>
+                <p>Saya lulus dari program S1 Pendidikan Teknologi Informatika Komputer di <a href="https://portal.unimed.ac.id/" target="_blank">Universitas Negeri Medan</a>, dan saat ini sedang melanjutkan pendidikan di Program Pendidikan Profesi Guru di <a href="http://ppg.unp.ac.id/" target="_blank">Universitas Negeri Padang</a>. Saya sangat tertarik pada pemrograman web dan selalu bersemangat untuk terus mengembangkan kemampuan saya di bidang ini.</p>
+                <p>Selama kuliah, saya belajar dan menguasai dasar-dasar pemrograman web seperti HTML, CSS, dan JavaScript, yang memberi saya kemampuan untuk menciptakan website yang menarik sekaligus fungsional. Saya percaya bahwa kombinasi pendidikan di bidang teknologi dan pemahaman tentang pedagogi akan membantu saya menciptakan lingkungan belajar yang lebih interaktif dan relevan bagi para siswa.</p>
+                <p>Saya dikenal sebagai pribadi yang humoris, namun bisa serius, dan senang mempelajari hal-hal baru. Dengan pendekatan berbasis teknologi yang inovatif, saya berharap bisa berkontribusi dalam dunia pendidikan sekaligus memperdalam keterampilan saya di bidang pemrograman. Saya yakin, di era digital ini, teknologi memiliki peran besar dalam membentuk pengalaman belajar yang efektif dan berdampak positif bagi para siswa.</p>
+                <button class="show-next fade-in"> 
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+            </section>
+            <section id="experience" class="section p-4 rounded hidden">
+                <h2>PENGALAMAN KERJA <span class="line"></span><span class="star">★</span></h2>
+                <p>Saya pernah bekerja menjadi Field Engineer, Guru, Asisten Kepala Kantor, dan juga Teknisi Komputer. Lihat timeline di bawah untuk lebih detail.</p>
+
+                <div class="timeline">
+                    <div class="timeline-item left">
+                        <div class="timeline-card">
+                            <span class="year">2022 - 2023</span>
+                            <button class="detail-btn" onclick="openModal('modal2023')">Detail</button>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-card">
+                            <span class="year">2021 - 2022</span>
+                            <button class="detail-btn" onclick="openModal('modal2022')">Detail</button>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-card">
+                            <span class="year">2019-2023</span>
+                            <button class="detail-btn" onclick="openModal('modal2021')">Detail</button>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-card">
+                            <span class="year">2016-2017</span>
+                            <button class="detail-btn" onclick="openModal('modal2020')">Detail</button>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-card">
+                            <span class="year">2015-2016</span>
+                            <button class="detail-btn" onclick="openModal('modal2019')">Detail</button>
+                        </div>
+                    </div>
+                    <!-- Tambahkan tahun pengalaman lainnya jika ada -->
+                </div>
+                <!-- Modal Structure -->
+                <div id="modal2023" class="modal">
+                    <div class="modal-content">
+                        <h2 class="modal-title">2022-2023</h2>
+                        <p class="work-place">PT Sumber Usaha Rizkila</p>
+                        <p class="modal-description">Saya bekerja sebagai Field Engineer di <a href="https://berhala.net" target="_blank">PT Sumber Usaha Rizkila</a> yang bermitra dengan <a href="https://holding-perkebunan.com/" target="_blank">PTPN2</a>, selama 1 tahun 3 bulan. Dalam peran ini, saya bertanggung jawab untuk mengukur koordinat Ground Control Point yang digunakan dalam proses pembuatan ortofoto untuk memastikan akurasi pemetaan. Saya juga melakukan pengecekan patok di kebun sawit (Ground Check) guna memverifikasi batas-batas lahan dan menjaga keakuratan data lapangan. Selain itu, saya membuat tutupan lahan pada ortofoto menggunakan software GIS, yang berfungsi untuk visualisasi dan analisis lahan. Pengalaman ini memperkuat keterampilan saya dalam pemetaan digital dan penggunaan teknologi GIS serta melatih ketelitian dalam proses koordinasi lapangan.</p>
+                        <div class="relative w-3/4 h-3/4 bg-white border border-red-500">
+                            <button class="absolute -left-12 top-1/2 transform -translate-y-1/2 text-4xl" id="prev-button">
+                                <i class="fas fa-chevron-left" style="color: var(--secondary)"></i>
+                            </button>                            
+                            <div class="flex items-center justify-center h-full">
+                             <img alt="Placeholder image" class="max-w-full max-h-full fade-in" height="600" id="carousel-image" src="img/image1.jpeg" width="800"/>
+                            </div>
+                            <button class="absolute -right-12 top-1/2 transform -translate-y-1/2 text-4xl" id="next-button">
+                                <i class="fas fa-chevron-right" style="color: var(--secondary)"></i>
+                            </button>                            
+                           </div>
+                    </div>
+                </div>
+                <div id="modal2022" class="modal">
+                    <div class="modal-content">
+                        <h2 class="modal-title">2021 - 2022</h2>
+                        <p class="work-place">SMK Swasta Imelda</p>
+                        <p class="modal-description">Sebagai guru mata pelajaran Sistem Komputer di kelas VII Multimedia, saya berfokus pada pengembangan keterampilan teknis siswa. Dalam setiap pelajaran, saya menciptakan suasana interaktif yang mendorong siswa untuk belajar melalui praktik langsung, mulai dari sistem bilangan sampai ke perangkat keras. Saya berkomitmen untuk menginspirasi siswa agar berpikir kreatif dan kritis, membekali mereka dengan keterampilan yang akan berguna di masa depan. Melihat perkembangan mereka adalah motivasi tersendiri bagi saya.</p>
+                    </div>
+                </div>
+
+                <div id="modal2021" class="modal">
+                    <div class="modal-content">
+                        <h2 class="modal-title">2019 - 2023</h2>
+                        <p class="work-place">Kang Cilok</p>
+                        <p class="modal-description">Ketika saya menjadi teknisi , saya telah menangani berbagai tugas yang berkaitan dengan teknologi, termasuk menginstal sistem operasi pada komputer dan laptop, serta melakukan perbaikan pada perangkat keras laptop dan printer.</p>
+                    </div>
+                </div>
+
+                <div id="modal2020" class="modal">
+                    <div class="modal-content">
+                        <h2 class="modal-title">2019 - 2023</h2>
+                        <p class="work-place">KPPBC TMP B Kualanamu</p>
+                        <p class="modal-description">Saya memiliki pengalaman menjadi Asisten Kepala Kantor ketika melaksanakan Prakrin (Praktek Kerja Industri) ketika semasa sekolah, dengan jobsdesk menerima, menginput, dan mendokumentasikan surat masuk dan keluar. Selain itu, saya juga berpartisipasi dalam pemeriksaan bea cukai di bandara, yang memberikan saya pemahaman mendalam tentang proses logistik dan kepatuhan terhadap regulasi yang berlaku.</p>
+                    </div>
+                </div>
+
+                <div id="modal2019" class="modal">
+                    <div class="modal-content">
+                        <h2 class="modal-title">2015-2016</h2>
+                        <p class="work-place">Mitra Teknik Computer</p>
+                        <p class="modal-description">Ketika saja menjadi teknisi di Mitra Teknik Computer ini, jobsheet yang sayng kerjakan mencakup instalasi sistem operasi pada komputer dan laptop, serta perawatan perangkat keras laptop dan printer. Keterampilan ini memungkinkan saya untuk memberikan dukungan teknis yang efektif dan memastikan perangkat berfungsi dengan optimal.</p>
+                    </div>
+                </div><br>
+                <button class="show-next fade-in">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+            </section>
+
+            <section id="study" class="section p-4 rounded hidden">
+                <h2>PENDIDIKAN <span class="line"></span><span class="star">★</span></h2>
+                <p>Saya bersekolah di Sekolah kejuruan yaitu SMK Negeri 1 Lubuk Pakam, di sekolah ini saya masuk ke jurusan Teknik Komputer dan Jaringan. Selanjutnya, saya berkuliah untuk mendapatkan gelar sarjana di Universitas Negeri Medan di Prodi Pendidikan Teknologi Informatika dan Komputer. Kemudian setelah itu saya melanjutkan studi profesi saya pada program PPG (Pendidikan Profesi Guru) Prajabatan di Universitas  Negeri Padang, di jurusan Informatika.</p>
+                <div class="concept-map">
+                    <div class="pusat">PENDIDIKAN</div>
+                    <div class="branch branch-vocational">
+                        VOKASI <br>
+                        <div class="show" onclick="openModal('modal-vokasi')">show</div>
+                      </div>
+                      
+                      <div class="branch branch-undergraduate">
+                        SARJANA <br>
+                        <div class="show" onclick="openModal('modal-sarjana')">show</div>
+                      </div>
+                      
+                      <div class="branch branch-postgraduate">
+                        PASCASARJANA <br>
+                        <div class="show" onclick="openModal('modal-pasca')">show</div>
+                        </div>
+                    <div class="connector connector-vocational"></div>
+                    <div class="connector connector-undergraduate"></div>
+                    <div class="connector connector-postgraduate"></div>
+                </div>
+                <!-- Modal Structure -->
+                <div id="modal-vokasi" class="modal" style="display: none;">
+                    <div class="modal-content">
+                    <h2 class="modal-title">VOKASI</h2>
+                    <p class="work-place">SMK Negeri 1 Lubuk Pakam</p>
+                    <div class="education-details">
+                        <div class="detail-row">
+                          <span class="detail-label">LAMA STUDI :</span>
+                          <span class="detail-value">3 tahun</span>
+                        </div>
+                        <div class="detail-row">
+                          <span class="detail-label">MASA STUDI :</span>
+                          <span class="detail-value">2014 - 2017</span>
+                        </div>
+                        <div class="detail-row">
+                          <span class="detail-label">JURUSAN :</span>
+                          <span class="detail-value">Teknik Komputer dan Jaringan</span>
+                        </div>
+                        <div class="detail-row">
+                          <span class="detail-label">ANGKATAN :</span>
+                          <span class="detail-value">2014</span>
+                        </div>
+                        <div class="detail-row">
+                          <span class="detail-label">LOKASI:</span>
+                          <span class="detail-value">
+                            <a href="https://maps.app.goo.gl/N8FPJDpjm8Bw1C6F8" target="_blank" rel="noopener noreferrer">
+                              Lubuk Pakam, Sumatera Utara
+                            </a>
+                          </span>
+                        </div>
+                      </div>
+                      <!-- Tombol Export to Excel dengan ikon -->
+                        <button class="export-btn" onclick="exportToExcel()">
+                            <i class="bi bi-file-earmark-spreadsheet"></i> Export to Excel
+                        </button>
+  
+                    </div>
+                </div>
+            
+                <div id="modal-sarjana" class="modal" style="display: none;">
+                    <div class="modal-content">
+                        <h2 class="modal-title">SARJANA</h2>
+                        <p class="work-place">Universitas Negeri Medan</p>
+                        <div class="education-details">
+                            <div class="detail-row">
+                              <span class="detail-label">LAMA STUDI :</span>
+                              <span class="detail-value">5 tahun</span>
+                            </div>
+                            <div class="detail-row">
+                              <span class="detail-label">MASA STUDI :</span>
+                              <span class="detail-value">2018 - 2023</span>
+                            </div>
+                            <div class="detail-row">
+                              <span class="detail-label">JURUSAN :</span>
+                              <span class="detail-value">Pendidikan Teknik Elektro</span>
+                            </div>
+                            <div class="detail-row">
+                              <span class="detail-label">PRODI :</span>
+                              <span class="detail-value">Pendidikan Teknologi Informatika dan Komputer</span>
+                            </div>
+                            <div class="detail-row">
+                              <span class="detail-label">FAKULTAS :</span>
+                              <span class="detail-value">Teknik</span>
+                            </div>
+                            <div class="detail-row">
+                              <span class="detail-label">ANGKATAN :</span>
+                              <span class="detail-value">2018 (Kedua)</span>
+                            </div>
+                            <div class="detail-row">
+                              <span class="detail-label">LOKASI:</span>
+                              <span class="detail-value">
+                                <a href="https://maps.app.goo.gl/yhEZksWageDvESRL7" target="_blank" rel="noopener noreferrer">
+                                  Percut Sei Tuan, Sumatera Utara
+                                </a>
+                              </span>
+                            </div>
+                          </div>
+                          <!-- Tombol Export to Excel dengan ikon -->
+                            <button class="export-btn" onclick="exportToExcel()">
+                                <i class="bi bi-file-earmark-spreadsheet"></i> Export to Excel
+                            </button>
+                    </div>
+                </div>
+            
+                <div id="modal-pasca" class="modal" style="display: none;">
+                    <div class="modal-content">
+                        <h2 class="modal-title">PPG PRAJABATAN</h2>
+                        <p class="work-place">Universitas Negeri Padang</p>
+                        <div class="education-details">
+                            <div class="detail-row">
+                              <span class="detail-label">LAMA STUDI :</span>
+                              <span class="detail-value">1 tahun</span>
+                            </div>
+                            <div class="detail-row">
+                              <span class="detail-label">MASA STUDI :</span>
+                              <span class="detail-value">2024</span>
+                            </div>
+                            <div class="detail-row">
+                              <span class="detail-label">JURUSAN :</span>
+                              <span class="detail-value">Pendidikan Teknik Informatika</span>
+                            </div>
+                            <div class="detail-row">
+                              <span class="detail-label">PRODI :</span>
+                              <span class="detail-value">Informatika</span>
+                            </div>
+                            <div class="detail-row">
+                              <span class="detail-label">FAKULTAS :</span>
+                              <span class="detail-value">Teknik</span>
+                            </div>
+                            <div class="detail-row">
+                              <span class="detail-label">ANGKATAN :</span>
+                              <span class="detail-value">2024 (Gelombang 1 Tahun 2024)</span>
+                            </div>
+                            <div class="detail-row">
+                              <span class="detail-label">LOKASI:</span>
+                              <span class="detail-value">
+                                <a href="https://maps.app.goo.gl/3JcAmPmFzfKJPtMv9" target="_blank" rel="noopener noreferrer">
+                                  Padang Utara, Sumatera Barat
+                                </a>
+                              </span>
+                            </div>
+                          </div>
+                          <!-- Tombol Export to Excel dengan ikon -->
+                            <button class="export-btn" onclick="exportToExcel()">
+                                <i class="bi bi-file-earmark-spreadsheet"></i> Export to Excel
+                            </button>
+                    </div>
+                </div>
+                <button class="show-next fade-in">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+            </section>
+
+            <section id="skill" class="section p-4 rounded hidden">
+                <h2>SKILL <span class="line"></span><span class="star">★</span></h2>
+                <p>Saya memiliki skill yang cukup baik dalam software office, web programming, dan software pengolah gambar. Perhatikan diagram di bawah berikut.</p>
+                    <section id="skills hidden" class="toad-fullscreen">
+                        <article class="skills">
+                            <div class="t-6">
+                                <p>Office<span></span><span class="skills"></span></p>
+                                
+                            </div>
+                            <div class="t-6">
+                                <p>Photoshop<span></span><span class="skills"></span></p>
+                            </div>
+                            
+                            <div class="t-6">
+                                <p>PHP<span></span><span class="skills"></span></p>
+                            </div>
+                            <div class="t-6">
+                                <p>Tailwind CSS<span></span><span class="skills"></span></p>
+                            </div>
+                            
+                            <div class="t-6">
+                                <p>Javascript<span></span><span class="skills"></span></p>
+                            </div>
+                            <div class="t-6">
+                                <p>Teaching<span></span><span class="skills"></span></p>
+                            </div>
+                            
+                            <div class="t-6">
+                                <p>Code Igniter<span></span><span class="skills"></span></p>
+                            </div>
+                        </article>
+                    </section>
+                    <button class="show-next fade-in">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+            </section>
+            <section id="contact" class="section p-4 rounded hidden">
+                <h2>KONTAK <span class="line"></span><span class="star">★</span></h2>
+                <div class="anu hidden">
+                    <div class="box instagram">
+                        <div class="box-inner">
+                            <div class="box-front">
+                                <img src="img/instagram.png" alt="Logo Instagram" />
+                            </div>
+                            <div class="box-back">
+                                <a href="https://www.instagram.com/username" target="_blank">@hrry.prstyo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box facebook">
+                        <div class="box-inner">
+                            <div class="box-front">
+                                <img src="img/fb.png" alt="Logo Facebook" />
+                            </div>
+                            <div class="box-back">
+                                <a href="https://www.facebook.com/hrry.prstyo" target="_blank">Harry Prasetyo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box linkedin">
+                        <div class="box-inner">
+                            <div class="box-front">
+                                <img src="img/linkedin.png" alt="Logo LinkedIn" />
+                            </div>
+                            <div class="box-back">
+                                <a href="https://www.linkedin.com/in/harry-prasetyo-094915176/" target="_blank">Harry Prasetyo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box whatsapp">
+                        <div class="box-inner">
+                            <div class="box-front">
+                                <img src="img/wa.png" alt="Logo WhatsApp" />
+                            </div>
+                            <div class="box-back">
+                                <a href="https://wa.me/6287768547923" target="_blank">+6287768547923</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box email">
+                        <div class="box-inner">
+                            <div class="box-front">
+                                <img src="img/email.png" alt="Logo Email" />
+                            </div>
+                            <div class="box-back">
+                                <a href="mailto:harry@heiharry.com" target="_blank">harry@heiharry.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+        </div>
+        </div>
+
+        <!-- Navigasi Menu -->
+    <div class="float-menu">
+        <button id="menu-toggle" class="btn btn-primary">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- Pop-up Menu -->
+    <div id="popup-menu" class="popup-menu">
+        <ul>
+            <li><a href="https://heiharry.com/cv/" id="homeButton">Home</a></li>
+            <li><a href="#background">Latar Belakang</a></li>
+            <li><a href="#experience">Pengalaman Kerja</a></li>
+            <li><a href="#study">Pendidikan</a></li>
+            <li><a href="#skill">Skill</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </div>
+    <div id="dateTimeWidget">
+        <span id="dateTimeDisplay"></span>
+    </div>
+    <div class="toggle-wrapper">
+    <button class="toggle" id="colorToggle">
+        <i class="fa-solid fa-palette"></i>
+    </button>
+    </div>
+
+    <footer class="footer text-center text-light">
+        <div class="container d-flex justify-content-center align-items-center">
+            <p class="mb-0">&copy; Harry Prasetyo -</p>
+            <div class="social-icons d-flex ms-2">
+                <a href="https://www.instagram.com/hrry.prstyo/" target="_blank" class="text-light ms-1">
+                    <i class="bi bi-instagram" style="color: var(--primary);"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/harry-prasetyo-094915176/" target="_blank" class="text-light ms-1">
+                    <i class="bi bi-linkedin" style="color: var(--primary);"></i>
+                </a>
+                <a href="mailto:harry@heiharry.com" target="_blank" class="text-light ms-1">
+                    <i class="fa-solid fa-envelope" style="color: var(--primary);"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.11/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
